@@ -6,6 +6,10 @@ const path = require('path');
 
 const app = express();
 
+// process.env.PORT extracts the environment variable port
+// chooses local port 3000 if the application is run locally
+const port = process.env.PORT || 3000;
+
 // Define paths for express config
 const publicDirectoryPath = path.join(__dirname, '../public');
 const viewsPath = path.join(__dirname, '../templates/views');
@@ -89,6 +93,6 @@ app.get('*', (req, res) => {
 });
 
 // Starts the server
-app.listen(3000, () => {
-    console.log('Server is running!');
+app.listen(port, () => {
+    console.log('Server is now running on port ' + port);
 });

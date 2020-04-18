@@ -16,7 +16,7 @@ weatherForm.addEventListener('submit', (e) => {
     msgTemp.textContent = '';
 
     // Fetches the weather json data then display it in the index page
-    fetch('http://localhost:3000/weather?address=' + encodeURIComponent(location)).then((response) => {
+    fetch('/weather?address=' + encodeURIComponent(location)).then((response) => {
         response.json().then((data) => {
             if (!data.error) {
                 msgLocation.textContent = data.location;
